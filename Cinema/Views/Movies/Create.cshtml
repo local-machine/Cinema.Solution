@@ -1,0 +1,49 @@
+@{
+    Layout = "_Layout";
+}
+
+@model Cinema.Models.Movie
+<h4> Add a new movie</h4>
+
+@using (Html.BeginForm())
+{
+
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+    
+    @Html.LabelFor(model => model.MPAARating)
+    @Html.TextBoxFor(model => model.MPAARating)
+
+    @Html.LabelFor(model => model.PublicRating)
+    @Html.TextBoxFor(model => model.PublicRating)
+
+    @Html.LabelFor(model => model.Runtime)
+    @Html.TextBoxFor(model => model.Runtime)
+
+    <select class="emoji" id="Emoji" name="Emoji">
+            <option>Select Emoji Reaction</option> 
+            <!-- Funny cry -->
+            <option>&#128514;</option> 
+            <!-- Heart eyes -->
+            <option>&#128525;</option> 
+            <!-- Cry sad -->
+            <option>&#128546;</option> 
+            <!-- Horror -->
+            <option>&#128561;</option> 
+            <!-- Sunglasses -->
+            <option>&#128526;</option> 
+    </select>
+
+    @Html.LabelFor(model => model.Genre)
+    @Html.DropDownList("GenreId")
+
+
+    <input type="submit" value="Add new Movie" class="btn btn-outline-success"/>
+}
+
+
+
+    

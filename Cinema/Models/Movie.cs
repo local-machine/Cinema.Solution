@@ -9,6 +9,8 @@ namespace Cinema.Models
         public string PublicRating { get; set; }
         public int Runtime { get; set; }
 
+        public string Emoji { get; set; }
+
         public virtual Genre Genre { get; set; }
     }
 }

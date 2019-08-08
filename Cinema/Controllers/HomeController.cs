@@ -3,7 +3,7 @@ using Cinema.Models;
 
 namespace Cinema.Controllers
 {
-    public class HomeController : Controllers
+    public class HomeController : Controller
     {
         [HttpGet("/")]
         public ActionResult Index()

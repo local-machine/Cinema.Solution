@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model Cinema.Models.Movie
+
+<h2>Movie Details</h2>
+<hr />
+<p>@Html.DisplayNameFor(model => model.Name): @Html.DisplayFor(model => model.Name)</p>
+<p>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</p>
+<p>@Html.DisplayNameFor(model => model.MPAARating): @Html.DisplayFor(model => model.MPAARating)</p>
+<p>@Html.DisplayNameFor(model => model.PublicRating): @Html.DisplayFor(model => model.PublicRating)</p>
+<p>@Html.DisplayNameFor(model => model.Runtime): @Html.DisplayFor(model => model.Runtime)</p>
+<p>@Html.DisplayNameFor(model => model.Emoji): @Html.DisplayFor(model => model.Emoji)</p>
+
+<p>@Html.DisplayNameFor(model => model.Genre): @Html.DisplayFor(model => model.Genre)</p>
+
+
+
+<p>@Html.ActionLink("Back to list", "Index")</p>
+<p>@Html.ActionLink("Edit Movie", "Edit", new { id = Model.MovieId })</p>
+<p>@Html.ActionLink("Delete Movie", "Delete", new { id = Model.MovieId })</p>

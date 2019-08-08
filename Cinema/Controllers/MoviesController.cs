@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using Cinema.Models;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Cinema.Controllers
 {
-    public class MovieController : Controller
+    public class MoviesController : Controller
     {
         private readonly CinemaContext _db;
 
@@ -24,7 +24,7 @@ namespace Cinema.Controllers
 
         public ActionResult Create()
         {
-            Viewbag.GenreId = new SelectList(_db.Genres, "GenreId", "Name");
+            ViewBag.GenreId = new SelectList(_db.Genres, "GenreId", "Name");
             return View();
         }
 
@@ -32,7 +32,7 @@ namespace Cinema.Controllers
         public ActionResult Create(Movie movie)
         {
             _db.Movies.Add(movie);
-            _db.SaveChange();
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -59,7 +59,7 @@ namespace Cinema.Controllers
 
         public ActionResult Delete(int id)
         {
-            var thisMovie = _db.Movies.FirstOrDefault(movies => movies.MovieID == id);
+            var thisMovie = _db.Movies.FirstOrDefault(movies => movies.MovieId == id);
             return View(thisMovie);
         }
 

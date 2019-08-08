@@ -1,5 +1,5 @@
-using System.COllections.Generic;
-using Systen.Linq;
+using System.Collections.Generic;
+using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Cinema.Models;
@@ -16,7 +16,7 @@ namespace Cinema.Controllers
 
         public ActionResult Index()
         {
-            List<GenresController> model = _db.Genres.ToList();
+            List<Genre> model = _db.Genres.ToList();
             return View(model);
         }
 
@@ -35,7 +35,7 @@ namespace Cinema.Controllers
 
         public ActionResult Details(int id)
         {
-            GenresController thisGenre = _db.Genres.FirstOrDefault(genres => genres.GenreId == id);
+            Genre thisGenre = _db.Genres.FirstOrDefault(genres => genres.GenreId == id);
             return View(thisGenre);
         }
 
