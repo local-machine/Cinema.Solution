@@ -17,8 +17,20 @@
     @Html.LabelFor(model => model.MPAARating)
     @Html.TextBoxFor(model => model.MPAARating)
 
-    @Html.LabelFor(model => model.PublicRating)
-    @Html.TextBoxFor(model => model.PublicRating)
+    <select class="publicRating" id="PublicRating" name="PublicRating">
+            <option>Select Emoji Reaction</option> 
+            <!-- 1 star -->
+            <option>&#128514;</option> 
+            <!-- 2 star -->
+            <option>&#128525;</option> 
+            <!-- 3 star-->
+            <option>&#128546;</option> 
+            <!-- 4 star -->
+            <option>&#128561;</option> 
+            <!-- 5 star-->
+            <option>&#128526;</option> 
+    </select>
+
 
     @Html.LabelFor(model => model.Runtime)
     @Html.TextBoxFor(model => model.Runtime)
@@ -26,15 +38,15 @@
     <select class="emoji" id="Emoji" name="Emoji">
             <option>Select Emoji Reaction</option> 
             <!-- Funny cry -->
-            <option>&#128514;</option> 
+            <option>&#127775;</option> 
             <!-- Heart eyes -->
-            <option>&#128525;</option> 
+            <option>&#127775; &#127775;</option>  
             <!-- Cry sad -->
-            <option>&#128546;</option> 
+            <option>&#127775; &#127775; &#127775;</option>  
             <!-- Horror -->
-            <option>&#128561;</option> 
+            <option>&#127775; &#127775; &#127775; &#127775; </option>  
             <!-- Sunglasses -->
-            <option>&#128526;</option> 
+            <option>&#127775; &#127775; &#127775; &#127775; &#127775;</option> 
     </select>
 
     @Html.LabelFor(model => model.Genre)
@@ -46,4 +58,4 @@
 
 
 
-    
+    <p>@Html.ActionLink("Show all movies", "Index")</p>
